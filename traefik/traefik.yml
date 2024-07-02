@@ -1,0 +1,35 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true
+  # Set insecure to false for production!
+  insecure: true 
+
+entryPoints:
+  web:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+
+  websecure:
+    address: :443
+    http:
+      tls:
+        certResolver: default
+
+certificatesResolvers:
+  default:
+    acme:
+      email: m.mousa@hey.com
+      storage: /ssl-certs/acme.json
+      httpChallenge:
+        entryPoint: web
+
+providers:
+  docker:
+    exposedByDefault: false
