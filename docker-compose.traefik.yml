@@ -14,12 +14,4 @@ services:
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml
       - ./traefik/ssl/:/ssl-certs/
 
-  whoami:
-    image: traefik/whoami
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.plausible.rule=Host(`$HOST.sslip.io`)"
-      - "traefik.http.services.plausible.loadbalancer.server.port=$PORT"
-      - "traefik.http.routers.plausible.tls=true"
-      - "traefik.http.routers.plausible.tls.certresolver=default"
 
