@@ -25,7 +25,7 @@ entryPoints:
 certificatesResolvers:
   default:
     acme:
-      email: m.mousa@hey.com
+      email: $EMAIL
       storage: /ssl-certs/acme.json
       httpChallenge:
         entryPoint: web
