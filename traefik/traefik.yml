@@ -3,9 +3,9 @@ global:
   sendAnonymousUsage: false
 
 api:
-  dashboard: true
+  dashboard: false
   # Set insecure to false for production!
-  insecure: true 
+  insecure: false
 
 entryPoints:
   web:
