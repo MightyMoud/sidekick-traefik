@@ -1,6 +1,6 @@
 services:
   traefik-service:
-    image: traefik:latest
+    image: traefik:v3.6
     # Enables the web UI and tells Traefik to listen to docker
     command: --api.insecure=false --providers.docker
     ports:
